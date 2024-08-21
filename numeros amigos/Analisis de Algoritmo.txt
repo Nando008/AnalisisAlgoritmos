@@ -1,0 +1,67 @@
+package javaapplication10;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class JavaApplication10 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num1 = 12285;
+        int num2 = 14595;
+        ArrayList<Integer> div1 = new ArrayList();
+        ArrayList<Integer> div2 = new ArrayList();
+        int suma1 = 0;
+        int suma2 = 0;
+        
+        long tInicio = System.nanoTime();
+
+        for (int i = 1; i < num1; i++) {
+            double div = num1 % i;
+
+            if (div == 0) {
+
+                div1.add(i);
+
+            }
+
+        }
+        for (int i = 1; i < num2; i++) {
+            double div = num2 % i;
+
+            if (div == 0) {
+
+                div2.add(i);
+
+            }
+
+        }
+
+        for (int i = 0; i < div1.size(); i++) {
+
+            suma1 = suma1 + div1.get(i);
+
+        }
+        System.out.println(suma1);
+
+        for (int i = 0; i < div2.size(); i++) {
+
+            suma2 = suma2 + div2.get(i);
+        }
+        System.out.println(suma2);
+
+        if (suma1 == num2 && suma2 == num1) {
+            System.out.println(" son amigos ");
+        } else {
+            System.out.println("no son amigos");
+        }
+        
+        long tFinal = System.nanoTime();
+        long tDiferencia = tFinal - tInicio;
+        
+        
+        System.out.println("la cantidad de tiempo es de " + tDiferencia);
+
+    }
+
+}
