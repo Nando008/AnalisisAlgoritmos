@@ -1,0 +1,59 @@
+package numerosamigoss;
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+public class NumerosAmigoss {
+
+    
+    public static void main(String[] args) {
+        
+        ArrayList<Integer> numeroOne = new ArrayList<Integer> ();
+        ArrayList<Integer> numeroTwo = new ArrayList<Integer> ();
+        int sumadorOne = 0;
+        int sumadorTwo = 0;
+        
+        int numberOne = 66928;
+        int numberTwo = 66992;
+        
+        long timeStar = System.nanoTime();
+        
+        for (int i = 1; i < numberOne; i++) {
+            
+            int temporary = numberOne % i;
+            
+            if (temporary == 0) {
+                numeroOne.add(i);
+            }
+            
+        }
+        
+        for (int i = 0; i < numeroOne.size(); i++) {
+            sumadorOne += numeroOne.get(i);
+        }
+        
+        for (int i = 1; i < numberTwo; i++) {
+            
+            int temporary = numberTwo % i;
+            
+            if (temporary == 0) {
+                numeroTwo.add(i);
+            }
+            
+        }
+        
+        for (int i = 0; i < numeroTwo.size(); i++) {
+            sumadorTwo += numeroTwo.get(i);
+        }
+        
+        if (numberOne == sumadorTwo && numberTwo == sumadorOne) {
+            System.out.println("son numeros amigos");
+        }else{
+            System.out.println("no son numeros amigos");
+        }
+        
+        long timeEnd = System.nanoTime();
+        long totalTime = timeEnd - timeStar;
+        System.out.println(totalTime);
+    }
+    
+}
